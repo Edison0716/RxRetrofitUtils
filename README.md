@@ -116,3 +116,5 @@ RxRetrofitUtils
             }
         });
 ```
+##通过学习 https://github.com/whichname/EasyRxRetrofit 这个朋友的库 自己仿照写的 感谢
+这位开发者！
