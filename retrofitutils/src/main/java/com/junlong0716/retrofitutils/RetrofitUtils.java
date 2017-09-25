@@ -7,10 +7,13 @@ import com.junlong0716.retrofitutils.log.LogInterceptor;
 import com.junlong0716.retrofitutils.upload.UploadOnSubscribe;
 import com.junlong0716.retrofitutils.upload.UploadRequestBody;
 import com.junlong0716.retrofitutils.utils.FileUtils;
+
 import org.reactivestreams.Publisher;
+
 import java.io.File;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -45,7 +48,9 @@ public class RetrofitUtils {
      * create download service
      */
     public static <T> T createDownLoadService(final Class<T> service) {
-        return mRetrofitClient.getRetrofitClient().create(service);
+        OkHttpClient client = new OkHttpClient.Builder().build();
+
+        return mRetrofitClient.getRetrofitClient().newBuilder().client(client).build().create(service);
     }
 
     /**

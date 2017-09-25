@@ -24,7 +24,7 @@ public class MyApp extends Application{
         myApplication = this;
         initImagePicker();
         NotifyUtil.init(this);
-        BaseRetrofitClient.getInstance().setBaseUrl("http://order.htxcsoft.com/").init(this);
+        BaseRetrofitClient.getInstance().setBaseUrl(Api.baseUrl).init(this);
     }
 
     private void initImagePicker() {
