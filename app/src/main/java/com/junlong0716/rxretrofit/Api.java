@@ -21,7 +21,7 @@ import retrofit2.http.Url;
  */
 
 public interface Api {
-    String baseUrl = "http://order.htxcsoft.com/";
+    String baseUrl = "http://xxx.xxx.com/";
 
     @GET("testForAz2.do")
     Observable<ResponseBody> getFoodType(@Query("page") String page);
